@@ -1,0 +1,241 @@
+:root{
+ --strong-cyan: hsl(172, 67%, 45%);
+ --very-dark-cyan: hsl(183, 100%, 15%);
+ --dark-grayish-cyan: hsl(186, 14%, 43%);
+ --grayish-cyan: hsl(184, 14%, 56%);
+ --light-grayish-cyan: hsl(185, 41%, 84%);
+ --very-light-grayish-cyan: hsl(189, 41%, 97%);
+
+ --gap-calculator: 3rem;
+}
+
+/* - Font size (form inputs): 24px */
+
+body{
+    font-family: "Space Mono", monospace;
+    margin: 0;
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+p{
+    margin: 0;
+}
+
+.background{
+    background-color: var(--light-grayish-cyan);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    width: 80px;
+    margin: 2.5rem 0;
+}
+
+.container{
+    width: 100%;
+    flex-grow: 2;
+}
+
+.container-padding{
+    border-radius: 15px 15px 0 0;
+    background-color: white;
+    padding: 2rem;
+
+}
+
+@media screen and (min-width: 378px){
+    .background{
+        height: 100vh;
+    }
+    .container{
+        max-width: 900px;
+    }
+    .container-padding{
+        border-radius: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    .logo{
+        margin: 6rem 0 4rem 0;
+    }
+}
+
+/* Calculator */
+
+.input{
+    box-sizing: border-box;
+    padding-right: 1rem;
+    display: block;
+    border: none;
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: 5px;
+    font-family: "Space Mono", monospace;
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.input:focus{
+    outline: none;
+    border: 2px solid var(--strong-cyan);
+    cursor: pointer;
+}
+
+.input-wide::placeholder{
+    font-family: "Space Mono", monospace;
+    color: var(--grayish-cyan);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.input-wide{
+    width: 100%;
+    margin-top: 0.4rem;
+    margin-bottom: 2rem;
+    height: 2.6rem;
+}
+
+.input-with-icon{
+    position: relative;
+}
+
+.input-icon{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Allows clicks to pass through to the input */
+    fill: var(--grayish-cyan);
+}
+
+.tip-select{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: calc(100% - 1rem);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tip-title{
+    margin-bottom: 0.4rem;
+}
+
+.tip-button{
+    border: none;
+    border-radius: 5px;
+    background-color: var(--very-dark-cyan);
+    padding: 0.5rem 0;
+    color: white;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.tip-button:hover{
+    cursor: pointer;
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.tip-input{
+    width: 100%;
+}
+
+.tip-percent-selected{
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.numberPeopleErr{
+    display: none;
+}
+
+.numberPeopleErr-show{
+    display: block;
+    color: red;
+}
+
+.input-people-err{
+    border: 2px solid red;
+}
+
+@media screen and (min-width: 378px){
+    .input-wide{
+        width: 100%;
+    }
+    .tip-select{
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .number-people-div{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+/* Results */
+
+.results{
+    background-color: var(--very-dark-cyan);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.result{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.result-title{
+    color: white;
+    font-size: 0.9rem;
+}
+
+.pro-person{
+    font-size: 0.8rem;
+}
+
+.result-value{
+    font-size: 1.7rem;
+    color: var(--strong-cyan);
+}
+
+.reset{
+    margin-top: 1rem;
+    background-color: var(--strong-cyan);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.5rem;
+    color: var(--very-dark-cyan);
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;    
+}
+
+@media screen and (min-width: 378px){
+    .results{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .result-value{
+        font-size: 2.5rem;
+    }
+    .reset{
+        background-color: var(--dark-grayish-cyan);
+    }
+    .reset:hover{
+        cursor: pointer;
+        background-color: var(--strong-cyan);
+    }
+}
